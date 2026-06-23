@@ -1,1 +1,917 @@
-Hello Junior coder!
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CODEPOLITAN Junior — Kelas Coding & AI untuk Anak</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-50: #E1F5EE;
+    --green-100: #9FE1CB;
+    --green-400: #1D9E75;
+    --green-600: #0F6E56;
+    --green-800: #085041;
+    --green-900: #04342C;
+    --amber-100: #FAC775;
+    --amber-900: #633806;
+    --blue-50: #E6F1FB;
+    --blue-600: #185FA5;
+    --text-primary: #1a1a1a;
+    --text-secondary: #555;
+    --text-muted: #888;
+    --bg-page: #f9f9f7;
+    --bg-white: #ffffff;
+    --bg-alt: #f4f4f2;
+    --border: #e4e4e0;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-page);
+  }
+
+  .page-wrapper { max-width: 980px; margin: 0 auto; background: var(--bg-white); }
+
+  /* NAV */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 40px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .nav-logo-name span { color: var(--green-400); }
+  .nav-logo-sub { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+  .nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-links a {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text-primary); }
+  .btn-nav {
+    background: var(--green-400);
+    color: #fff;
+    border: none;
+    padding: 9px 20px;
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-nav:hover { background: var(--green-600); }
+
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 400px;
+    background: #F0FAF6;
+  }
+  .hero-left {
+    padding: 56px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--green-50);
+    color: var(--green-600);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid var(--green-100);
+    margin-bottom: 20px;
+    width: fit-content;
+  }
+  h1 {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+  }
+  h1 span { color: var(--green-600); }
+  .hero-sub {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 360px;
+  }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--green-400);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--green-600); }
+  .btn-outline {
+    background: transparent;
+    color: var(--green-600);
+    border: 1.5px solid var(--green-100);
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-outline:hover {
+    background: var(--green-50);
+    border-color: var(--green-400);
+  }
+  .hero-right {
+    background: linear-gradient(140deg, #9FE1CB 0%, #d0f0e6 50%, #E1F5EE 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-illustration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 40px;
+  }
+  .screen-mock {
+    background: var(--bg-white);
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.08);
+    padding: 18px;
+    width: 230px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  .screen-topbar { display: flex; gap: 5px; margin-bottom: 14px; }
+  .dot {
+    width: 9px; height: 9px; border-radius: 50%;
+  }
+  .screen-filename {
+    font-size: 10px;
+    color: var(--green-600);
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family: monospace;
+  }
+  .code-line {
+    height: 8px;
+    border-radius: 3px;
+    background: var(--green-50);
+    margin-bottom: 6px;
+  }
+  .code-accent { background: var(--green-100); }
+  .screen-success {
+    background: var(--green-400);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* SECTIONS */
+  section { padding: 64px 48px; }
+  section.alt { background: var(--bg-alt); }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--green-600);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+  .section-sub {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 580px;
+    margin-bottom: 36px;
+  }
+
+  /* PROBLEM CARDS */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .problem-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+  .problem-icon {
+    width: 40px; height: 40px;
+    border-radius: var(--radius-sm);
+    background: var(--green-50);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--green-600);
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .problem-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+  .problem-card strong { color: var(--text-primary); }
+
+  /* AUTHORITY */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+  .stat-chip {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-num { font-size: 22px; font-weight: 600; color: var(--green-600); }
+  .stat-label { font-size: 11px; color: var(--text-muted); margin-top: 3px; line-height: 1.4; }
+
+  .pillar-list { display: flex; flex-direction: column; gap: 14px; }
+  .pillar-item { display: flex; gap: 14px; align-items: flex-start; }
+  .pillar-check {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--green-400);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: #fff;
+    font-size: 12px;
+  }
+  .pillar-text { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+  .pillar-text strong { color: var(--text-primary); }
+
+  /* PROGRAM */
+  .program-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .program-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 26px;
+    position: relative;
+  }
+  .program-card.featured {
+    border: 2px solid var(--green-400);
+  }
+  .featured-badge {
+    position: absolute;
+    top: -1px; right: 18px;
+    background: var(--green-400);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 0 0 8px 8px;
+    letter-spacing: 0.02em;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  .tag-green { background: var(--green-50); color: var(--green-600); }
+  .tag-amber { background: #FAEEDA; color: var(--amber-900); }
+  .tag-blue { background: var(--blue-50); color: var(--blue-600); }
+
+  .program-title { font-size: 17px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+  .program-age { font-size: 12px; color: var(--text-muted); margin-bottom: 16px; }
+  .program-items { list-style: none; padding: 0; margin-bottom: 20px; }
+  .program-items li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    padding: 4px 0;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .program-items li::before {
+    content: "";
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--green-400);
+    flex-shrink: 0;
+  }
+  .price { font-size: 20px; font-weight: 600; color: var(--text-primary); }
+  .price span { font-size: 13px; font-weight: 400; color: var(--text-muted); }
+
+  .program-extras {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 18px 24px;
+    display: flex;
+    gap: 0;
+  }
+  .program-extra {
+    flex: 1;
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 0 20px;
+  }
+  .program-extra:first-child { padding-left: 0; border-right: 1px solid var(--border); }
+  .program-extra:last-child { padding-right: 0; }
+  .extra-icon {
+    width: 36px; height: 36px;
+    border-radius: var(--radius-sm);
+    background: var(--green-50);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--green-600);
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .extra-title { font-size: 13px; font-weight: 500; color: var(--text-primary); margin-bottom: 2px; }
+  .extra-desc { font-size: 12px; color: var(--text-muted); }
+
+  /* STEPS */
+  .steps-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--bg-white);
+  }
+  .step-item {
+    padding: 28px 28px;
+    border-right: 1px solid var(--border);
+  }
+  .step-item:last-child { border-right: none; }
+  .step-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--green-50);
+    color: var(--green-600);
+    font-size: 15px;
+    font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px;
+  }
+  .step-title { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
+  .step-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.65; }
+
+  /* SOCIAL PROOF */
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .showcase-card {
+    background: var(--green-50);
+    border: 1px solid var(--green-100);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    text-align: center;
+  }
+  .showcase-icon { font-size: 28px; color: var(--green-600); margin-bottom: 10px; }
+  .showcase-label { font-size: 13px; font-weight: 500; color: var(--green-600); }
+  .showcase-meta { font-size: 11px; color: var(--green-400); margin-top: 3px; }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  .testimonial {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px;
+  }
+  .testimonial-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+  .testimonial-author { display: flex; align-items: center; gap: 10px; }
+  .avatar {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: var(--green-50);
+    color: var(--green-600);
+    font-size: 12px;
+    font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .author-name { font-size: 13px; font-weight: 500; color: var(--text-primary); }
+  .author-meta { font-size: 11px; color: var(--text-muted); }
+  .placeholder-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+    padding: 8px;
+    background: #fffbeb;
+    border: 1px solid #FAC775;
+    border-radius: var(--radius-sm);
+  }
+
+  /* GUARANTEE */
+  .guarantee-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .guarantee-item { display: flex; gap: 12px; align-items: flex-start; }
+  .guarantee-check {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--green-400);
+    color: #fff;
+    font-size: 12px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .guarantee-text { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+
+  /* CTA SECTION */
+  .cta-section {
+    background: var(--green-800);
+    color: #fff;
+    text-align: center;
+    padding: 64px 48px;
+  }
+  .cta-section h2 { color: #fff; font-size: 26px; margin-bottom: 12px; }
+  .cta-section p { color: var(--green-100); max-width: 480px; margin: 0 auto 32px; font-size: 15px; }
+  .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-cta-primary {
+    background: #fff;
+    color: var(--green-800);
+    border: none;
+    padding: 14px 30px;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+  }
+  .btn-cta-primary:hover { background: var(--green-50); }
+  .btn-cta-wa {
+    background: transparent;
+    color: #fff;
+    border: 1.5px solid var(--green-100);
+    padding: 14px 30px;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex; align-items: center; gap: 8px;
+    text-decoration: none;
+  }
+  .btn-cta-wa:hover { background: rgba(255,255,255,0.08); }
+
+  /* LEAD */
+  .lead-section {
+    padding: 48px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    background: var(--bg-white);
+  }
+  .lead-section h3 { font-size: 19px; font-weight: 600; margin-bottom: 8px; }
+  .lead-section p { font-size: 14px; color: var(--text-secondary); margin-bottom: 22px; }
+  .lead-row { display: flex; gap: 10px; max-width: 400px; margin: 0 auto; }
+  .lead-row input {
+    flex: 1;
+    padding: 11px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--text-primary);
+    background: var(--bg-white);
+    outline: none;
+    transition: border 0.2s;
+  }
+  .lead-row input:focus { border-color: var(--green-400); }
+  .lead-row button {
+    background: var(--green-400);
+    color: #fff;
+    border: none;
+    padding: 11px 20px;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .lead-row button:hover { background: var(--green-600); }
+
+  /* FOOTER */
+  footer {
+    padding: 22px 48px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-white);
+  }
+  .footer-brand { font-size: 13px; color: var(--text-muted); }
+  .footer-brand strong { color: var(--text-primary); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  .footer-links a:hover { color: var(--text-primary); }
+
+  /* RESPONSIVE */
+  @media (max-width: 700px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 40px 24px; }
+    section { padding: 48px 24px; }
+    .problem-grid { grid-template-columns: 1fr; }
+    .stat-row { grid-template-columns: repeat(2, 1fr); }
+    .program-grid { grid-template-columns: 1fr; }
+    .steps-container { grid-template-columns: 1fr; }
+    .step-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .step-item:last-child { border-bottom: none; }
+    .showcase-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .guarantee-grid { grid-template-columns: 1fr; }
+    .cta-section { padding: 48px 24px; }
+    .program-extras { flex-direction: column; }
+    .program-extra:first-child { border-right: none; border-bottom: 1px solid var(--border); padding: 0 0 16px 0; margin-bottom: 16px; }
+    .program-extra { padding: 0; }
+    footer { flex-direction: column; gap: 12px; padding: 22px 24px; }
+    .lead-section { padding: 48px 24px; }
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- NAV -->
+  <nav>
+    <div>
+      <div class="nav-logo-name">CODEPOLITAN <span>Junior</span></div>
+      <div class="nav-logo-sub">by CODEPOLITAN</div>
+    </div>
+    <div class="nav-links">
+      <a href="#program">Program</a>
+      <a href="#cara-kerja">Cara Belajar</a>
+      <a href="#untuk-sekolah">Untuk Sekolah</a>
+      <button class="btn-nav" onclick="document.getElementById('trial').scrollIntoView({behavior:'smooth'})">Coba Trial</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" style="padding:0;">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <i class="ti ti-star" aria-hidden="true" style="font-size:12px;"></i>
+        by CODEPOLITAN &middot; 10 tahun membangun developer Indonesia
+      </div>
+      <h1>Saatnya anak Anda <span>mencipta</span>, bukan cuma menonton.</h1>
+      <p class="hero-sub">Kelas coding dan AI untuk anak usia 7&ndash;13 tahun. Belajar langsung, suasana menyenangkan, materi yang nyambung dengan kebutuhan sekolah sekarang.</p>
+      <div class="hero-ctas">
+        <a href="#trial" class="btn-primary">Coba Kelas Trial &rarr;</a>
+        <a href="#program" class="btn-outline">Lihat Program</a>
+      </div>
+    </div>
+    <div class="hero-right" aria-hidden="true">
+      <div class="hero-illustration">
+        <div class="screen-mock">
+          <div class="screen-topbar">
+            <div class="dot" style="background:#E24B4A;"></div>
+            <div class="dot" style="background:#EF9F27;"></div>
+            <div class="dot" style="background:#639922;"></div>
+          </div>
+          <div class="screen-filename">game_pertama.py</div>
+          <div class="code-line code-accent" style="width:72%;"></div>
+          <div class="code-line" style="width:90%;"></div>
+          <div class="code-line code-accent" style="width:55%;"></div>
+          <div class="code-line" style="width:82%;"></div>
+          <div class="code-line" style="width:68%;"></div>
+          <div class="code-line code-accent" style="width:46%;"></div>
+        </div>
+        <div class="screen-success">
+          <i class="ti ti-trophy" aria-hidden="true" style="font-size:13px;margin-right:5px;"></i>
+          Game pertama anak Anda selesai!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="alt">
+    <p class="section-label">Kekhawatiran orang tua</p>
+    <h2>Anda mungkin pernah merasakan ini.</h2>
+    <p class="section-sub">Bukan hanya Anda. Hampir semua orang tua yang datang ke kami mulai dari titik yang sama.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon"><i class="ti ti-device-tv" aria-hidden="true"></i></div>
+        <p><strong>Screen time tapi pasif.</strong> Anak menghabiskan berjam-jam di layar, tapi lebih banyak menonton dan main game daripada membuat sesuatu.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon"><i class="ti ti-map-pin-question" aria-hidden="true"></i></div>
+        <p><strong>Bingung mulai dari mana.</strong> Ingin anak melek teknologi, tapi sulit menemukan tempat yang benar-benar paham cara mengajar anak.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon"><i class="ti ti-school" aria-hidden="true"></i></div>
+        <p><strong>Sekolah sudah berubah.</strong> Mata pelajaran Koding dan AI sudah masuk kurikulum. Jendela waktunya terbuka, tapi tidak selama yang kita kira.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHORITY -->
+  <section>
+    <p class="section-label">Pemandu</p>
+    <h2>Kami sudah ada di dunia ini sebelum anak Anda lahir.</h2>
+    <p class="section-sub">Sejak 2016, CODEPOLITAN membantu lebih dari 223.000 orang Indonesia belajar teknologi. CODEPOLITAN Junior adalah lanjutan misi yang sama, dirancang khusus untuk anak usia sekolah.</p>
+    <div class="stat-row">
+      <div class="stat-chip">
+        <div class="stat-num">223rb+</div>
+        <div class="stat-label">member aktif</div>
+      </div>
+      <div class="stat-chip">
+        <div class="stat-num">10 thn</div>
+        <div class="stat-label">pengalaman</div>
+      </div>
+      <div class="stat-chip">
+        <div class="stat-num">23rb+</div>
+        <div class="stat-label">penerima beasiswa</div>
+      </div>
+      <div class="stat-chip">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">mitra korporat &amp; pemerintah</div>
+      </div>
+    </div>
+    <div class="pillar-list">
+      <div class="pillar-item">
+        <div class="pillar-check"><i class="ti ti-check" aria-hidden="true" style="font-size:12px;"></i></div>
+        <p class="pillar-text"><strong>Kurikulum dari praktisi nyata.</strong> Disusun oleh tim yang sudah membantu ribuan developer Indonesia berkarir, bukan sekadar materi buku teks.</p>
+      </div>
+      <div class="pillar-item">
+        <div class="pillar-check"><i class="ti ti-check" aria-hidden="true" style="font-size:12px;"></i></div>
+        <p class="pillar-text"><strong>Cara mengajar sesuai usia.</strong> Pengajar yang dilatih untuk berbicara dengan anak, bukan memaksakan cara belajar orang dewasa ke anak.</p>
+      </div>
+      <div class="pillar-item">
+        <div class="pillar-check"><i class="ti ti-check" aria-hidden="true" style="font-size:12px;"></i></div>
+        <p class="pillar-text"><strong>Jalur belajar yang menyambung.</strong> Anak yang besar bersama CODEPOLITAN Junior punya jalur lanjut ke ekosistem CODEPOLITAN dewasa. Tidak ada tempat lain yang punya ini.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM -->
+  <section class="alt" id="program">
+    <p class="section-label">Program</p>
+    <h2>Setiap usia punya cara belajarnya sendiri.</h2>
+    <p class="section-sub">Kelas kecil, 6&ndash;8 anak per sesi. Satu kali seminggu. Tersedia juga kelas intensif dan privat 1:1.</p>
+    <div class="program-grid">
+      <div class="program-card">
+        <span class="tag tag-green">Usia 7&ndash;9 tahun</span>
+        <div class="program-title">Junior Explorer</div>
+        <div class="program-age">Untuk anak yang baru mulai berkenalan dengan coding</div>
+        <ul class="program-items">
+          <li>Scratch dan pemrograman visual</li>
+          <li>Modding Roblox dasar</li>
+          <li>Robotik pengantar</li>
+          <li>Proyek kecil yang bisa dipamerkan</li>
+        </ul>
+        <div class="price">Rp 550.000 <span>/ bulan</span></div>
+      </div>
+      <div class="program-card featured">
+        <div class="featured-badge">Paling diminati</div>
+        <span class="tag tag-green">Usia 10&ndash;13 tahun</span>
+        <div class="program-title">Junior Builder</div>
+        <div class="program-age">Untuk anak yang siap membuat karya yang lebih serius</div>
+        <ul class="program-items">
+          <li>Scratch lanjutan dan Python pengantar</li>
+          <li>Web dasar dan pembuatan game</li>
+          <li>Pengenalan alat AI</li>
+          <li>Showcase project di komunitas CODEPOLITAN</li>
+        </ul>
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+          <div class="price">Rp 650.000 <span>/ bulan</span></div>
+          <span class="tag tag-amber" style="margin:0;">Sesuai Permendikdasmen 13/2025</span>
+        </div>
+      </div>
+    </div>
+    <div class="program-extras">
+      <div class="program-extra">
+        <div class="extra-icon"><i class="ti ti-user" aria-hidden="true"></i></div>
+        <div>
+          <div class="extra-title">Privat 1:1</div>
+          <div class="extra-desc">Slot terbatas &middot; Rp 850.000 / bulan</div>
+        </div>
+      </div>
+      <div class="program-extra">
+        <div class="extra-icon"><i class="ti ti-sun" aria-hidden="true"></i></div>
+        <div>
+          <div class="extra-title">Holiday Camp</div>
+          <div class="extra-desc">5 hari &times; 3 jam saat liburan sekolah &middot; Rp 1.500.000</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section id="cara-kerja">
+    <p class="section-label">Cara kerja</p>
+    <h2>Mulainya mudah.</h2>
+    <p class="section-sub" style="margin-bottom:28px;">Tidak perlu langsung komitmen. Coba dulu, lihat sendiri apakah anak Anda cocok.</p>
+    <div class="steps-container">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-title">Coba dulu.</div>
+        <p class="step-desc">Daftarkan anak untuk kelas trial. Lihat sendiri suasananya dan apakah anak cocok.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-title">Mulai rutin.</div>
+        <p class="step-desc">Kalau anak senang, daftarkan ke kelas reguler. Kami bantu pilih jenjang yang paling pas.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-title">Lihat anak berkembang.</div>
+        <p class="step-desc">Dari karya pertama yang sederhana sampai anak yang makin percaya diri berpikir dan berkarya.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="alt">
+    <p class="section-label">Bukti nyata</p>
+    <h2>Anak-anak ini sudah mulai berkarya.</h2>
+    <p class="section-sub">Karya dari anak-anak yang sudah mengikuti kelas di CODEPOLITAN Junior.</p>
+    <div class="showcase-grid">
+      <div class="showcase-card">
+        <div class="showcase-icon"><i class="ti ti-device-gamepad-2" aria-hidden="true"></i></div>
+        <div class="showcase-label">Game Scratch</div>
+        <div class="showcase-meta">Usia 8 tahun &middot; 4 minggu belajar</div>
+      </div>
+      <div class="showcase-card">
+        <div class="showcase-icon"><i class="ti ti-player-play" aria-hidden="true"></i></div>
+        <div class="showcase-label">Animasi Interaktif</div>
+        <div class="showcase-meta">Usia 10 tahun &middot; 6 minggu belajar</div>
+      </div>
+      <div class="showcase-card">
+        <div class="showcase-icon"><i class="ti ti-code" aria-hidden="true"></i></div>
+        <div class="showcase-label">Website Pertama</div>
+        <div class="showcase-meta">Usia 12 tahun &middot; 3 bulan belajar</div>
+      </div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p class="testimonial-text">"Anak saya awalnya ragu, tapi setelah kelas pertama langsung nanya kapan kelas lagi. Dalam 2 bulan sudah bisa bikin game sendiri dan bangga banget nunjukkin ke teman-temannya."</p>
+        <div class="testimonial-author">
+          <div class="avatar">RD</div>
+          <div>
+            <div class="author-name">Ibu Rida D.</div>
+            <div class="author-meta">Orang tua siswa usia 9 tahun</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-text">"Yang bikin saya tenang, pengajarnya sabar dan cara ngajarnya memang buat anak, bukan dipaksain kayak belajar di sekolah. Anak saya tidak pernah minta berhenti."</p>
+        <div class="testimonial-author">
+          <div class="avatar">FA</div>
+          <div>
+            <div class="author-name">Bapak Fajar A.</div>
+            <div class="author-meta">Orang tua siswa usia 11 tahun</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="placeholder-note">&#9888; Ganti dengan kutipan nyata dari peserta pilot sebelum publish. Showcase karya juga perlu diganti dengan foto/screenshot asli.</p>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section>
+    <p class="section-label">Jaminan</p>
+    <h2>Yang kami jaga untuk Anda.</h2>
+    <p class="section-sub" style="margin-bottom:28px;">Kami tahu ini keputusan yang tidak kecil. Jadi kami pastikan tidak ada hal yang membuat Anda ragu.</p>
+    <div class="guarantee-grid">
+      <div class="guarantee-item">
+        <div class="guarantee-check"><i class="ti ti-check" aria-hidden="true" style="font-size:12px;"></i></div>
+        <p class="guarantee-text">Kelas dirancang khusus untuk anak, bukan materi dewasa yang disederhanakan.</p>
+      </div>
+      <div class="guarantee-item">
+        <div class="guarantee-check"><i class="ti ti-check" aria-hidden="true" style="font-size:12px;"></i></div>
+        <p class="guarantee-text">Kelas kecil, 6&ndash;8 anak per sesi. Pengajar punya waktu untuk mendampingi setiap anak.</p>
+      </div>
+      <div class="guarantee-item">
+        <div class="guarantee-check"><i class="ti ti-check" aria-hidden="true" style="font-size:12px;"></i></div>
+        <p class="guarantee-text">Materi selaras dengan mata pelajaran Koding dan AI yang sudah masuk ke sekolah.</p>
+      </div>
+      <div class="guarantee-item">
+        <div class="guarantee-check"><i class="ti ti-check" aria-hidden="true" style="font-size:12px;"></i></div>
+        <p class="guarantee-text">Kalau setelah trial anak tidak cocok, tidak ada kewajiban untuk lanjut.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="trial" style="padding:64px 48px;">
+    <h2>Anak Anda bisa mulai minggu ini.</h2>
+    <p>Coba satu kelas dulu. Tidak perlu langsung komitmen.</p>
+    <div class="cta-btns">
+      <a href="#" class="btn-cta-primary">Daftarkan Anak untuk Trial &rarr;</a>
+      <a href="https://wa.me/62XXXXXXXXXX" class="btn-cta-wa" target="_blank" rel="noopener">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+        Tanya Dulu via WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- LEAD MAGNET -->
+  <section class="lead-section">
+    <h3>Belum yakin? Ambil yang gratis dulu.</h3>
+    <p>Download panduan: <em>"5 Tanda Anak Siap Mulai Belajar Coding"</em> untuk orang tua yang masih dalam tahap mempertimbangkan.</p>
+    <div class="lead-row">
+      <input type="email" placeholder="Email Anda" aria-label="Masukkan email untuk download panduan gratis" />
+      <button type="button">Kirim &rarr;</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <strong>CODEPOLITAN Junior</strong> &middot; by PT Codepolitan Integrasi Indonesia
+    </div>
+    <div class="footer-links">
+      <a href="#" id="untuk-sekolah">Untuk Sekolah</a>
+      <a href="#">Lokasi</a>
+      <a href="#">Kontak</a>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
