@@ -558,16 +558,16 @@ body {
   pointer-events: none;
 }
 
-.px-b--1  { width:18px; height:18px; background:#9B7FD4; top:8%;    left:18%;  opacity:0.45; transform:rotate(12deg);  animation:floatY  6s   ease-in-out infinite; }
+.px-b--1  { width:36px; height:36px; background:#9B7FD4; top:8%;    left:18%;  opacity:0.45; transform:rotate(12deg);  animation:floatY  6s   ease-in-out infinite; }
 .px-b--2  { width:14px; height:14px; background:#EF9F27; top:12%;   left:55%;  opacity:0.40; transform:rotate(-8deg);  animation:floatYb 7s   ease-in-out infinite; }
-.px-b--3  { width:20px; height:20px; background:#1D9E75; top:25%;   left:8%;   opacity:0.35; transform:rotate(18deg);  animation:floatYc 5s   ease-in-out infinite; }
+.px-b--3  { width:48px; height:48px; background:#1D9E75; top:25%;   left:8%;   opacity:0.35; transform:rotate(18deg);  animation:floatYc 5s   ease-in-out infinite; }
 .px-b--4  { width:12px; height:12px; background:#E24B4A; top:18%;   right:18%; opacity:0.40; transform:rotate(-14deg); animation:floatY  8s   ease-in-out infinite; }
-.px-b--5  { width:16px; height:16px; background:#378ADD; top:45%;   left:6%;   opacity:0.30; transform:rotate(6deg);   animation:floatYb 6.5s ease-in-out infinite; }
+.px-b--5  { width:40px; height:40px; background:#378ADD; top:45%;   left:6%;   opacity:0.30; transform:rotate(6deg);   animation:floatYb 6.5s ease-in-out infinite; }
 .px-b--6  { width:22px; height:22px; background:#EF9F27; top:55%;   right:8%;  opacity:0.35; transform:rotate(-10deg); animation:floatYc 7.5s ease-in-out infinite; }
 .px-b--7  { width:14px; height:14px; background:#9B7FD4; top:70%;   left:20%;  opacity:0.30; transform:rotate(20deg);  animation:floatY  5.5s ease-in-out infinite; }
-.px-b--8  { width:18px; height:18px; background:#1D9E75; top:75%;   right:22%; opacity:0.35; transform:rotate(-5deg);  animation:floatYb 9s   ease-in-out infinite; }
+.px-b--8  { width:52px; height:52px; background:#1D9E75; top:75%;   right:22%; opacity:0.35; transform:rotate(-5deg);  animation:floatYb 9s   ease-in-out infinite; }
 .px-b--9  { width:12px; height:12px; background:#E24B4A; top:35%;   right:5%;  opacity:0.25; transform:rotate(15deg);  animation:floatYc 6s   ease-in-out infinite; }
-.px-b--10 { width:16px; height:16px; background:#378ADD; bottom:10%; left:40%; opacity:0.30; transform:rotate(-18deg); animation:floatY  7s   ease-in-out infinite; }
+.px-b--10 { width:44px; height:44px; background:#378ADD; bottom:10%; left:40%; opacity:0.30; transform:rotate(-18deg); animation:floatY  7s   ease-in-out infinite; }
 
 /* ===== CODE SYMBOLS ===== */
 .code-symbol {
