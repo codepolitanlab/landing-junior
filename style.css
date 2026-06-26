@@ -439,6 +439,71 @@ body {
   z-index: 2;
 }
 
+.hero-float-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 2px solid #2B2440;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #2B2440;
+  white-space: nowrap;
+  box-shadow: 3px 3px 0 #2B2440;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hfc-icon {
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.hfc-text {
+  line-height: 1.2;
+}
+
+.hero-float-card--top {
+  top: 18%;
+  right: -2%;
+  background: #FBCB4A;
+  border-color: #FBCB4A;
+  box-shadow: 3px 3px 0 #d4a520;
+  color: #3D3D3D;
+  font-size: 15px;
+  padding: 13px 22px;
+  animation: floatY 6s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.hero-float-card--bottom {
+  bottom: -16%;
+  left: -4%;
+  background: #ffffff;
+  border-color: #17C098;
+  box-shadow: 3px 3px 0 #0e8f6e;
+  color: #3D3D3D;
+  font-size: 15px;
+  padding: 13px 22px;
+  animation: floatCard 7s ease-in-out infinite;
+  animation-delay: 1.2s;
+  animation-fill-mode: both;
+}
+
+.hero-float-card--bottom .hfc-icon {
+  color: #419D43;
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50%       { transform: translateY(-14px) rotate(-4deg); }
+}
+
 @media (max-width: 768px) {
   .hero-scene {
     width: min(100%, 340px);
@@ -446,11 +511,15 @@ body {
   }
   .hero-scratch { width: 80%; }
   .hero-biko    { width: 58%; bottom: -5%; right: -2%; }
+  .hero-float-card { font-size: 11px; padding: 8px 14px; gap: 6px; }
+  .hero-float-card--top { top: 4%; right: 0%; }
+  .hero-float-card--bottom { bottom: 10%; left: 0%; }
 }
 
 @media (max-width: 480px) {
   .hero-scratch { width: 85%; }
   .hero-biko    { width: 55%; }
+  .hero-float-card { display: none; }
 }
 
 .hero-illustration {
