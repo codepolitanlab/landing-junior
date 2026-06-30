@@ -433,10 +433,22 @@ body {
 .hero-biko {
   position: absolute;
   bottom: -24%;
-  right: -12%;
-  width: 88%;
+  right: 4%;
+  width: 68%;
   height: auto;
   z-index: 2;
+}
+
+.biko-bubble {
+  position: absolute;
+  bottom: 10%;
+  right: -14%;
+  z-index: 4;
+  width: 140px;
+  height: auto;
+  pointer-events: none;
+  animation: floatY 5s ease-in-out infinite;
+  animation-delay: 0.3s;
 }
 
 .hero-float-card {
@@ -514,12 +526,14 @@ body {
   .hero-float-card { font-size: 11px; padding: 8px 14px; gap: 6px; }
   .hero-float-card--top { top: 4%; right: 0%; }
   .hero-float-card--bottom { bottom: 10%; left: 0%; }
+  .biko-bubble { font-size: 12px; padding: 8px 13px; bottom: 40%; right: -3%; }
 }
 
 @media (max-width: 480px) {
   .hero-scratch { width: 85%; }
   .hero-biko    { width: 55%; }
   .hero-float-card { display: none; }
+  .biko-bubble { display: none; }
 }
 
 .hero-illustration {
