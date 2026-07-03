@@ -8,30 +8,90 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: '#2B2440',
+            muted: '#6E6680',
+            'muted-light': '#9A93A8',
+            'muted-lighter': '#8A8398',
+            'muted-link': '#5B5470',
+            green: '#16C098',
+            'green-dark': '#0E9A78',
+            'green-darker': '#0e8f6e',
+            red: '#FF6B5E',
+            'red-dark': '#E04A3D',
+            yellow: '#FFB800',
+            'yellow-dark': '#E0A800',
+            'yellow-darker': '#d4a520',
+            blue: '#4D7CFF',
+            purple: '#9B6DFF',
+            'purple-dark': '#7A47E6',
+            pink: '#FF7BAC',
+            border: '#F0E7D6',
+            'problem-bg': '#FFF1E6',
+            'program-bg': '#EAF4FF',
+            'social-bg': '#FFEAF2',
+            'hero-start': '#F5F3FF',
+            'hero-mid': '#E7E3FC',
+            'hero-end': '#EDE8FF',
+          },
+          fontFamily: {
+            display: ['"Baloo 2"', 'sans-serif'],
+            body: ['Nunito', 'sans-serif'],
+          },
+          boxShadow: {
+            'badge': '3px 3px 0',
+            'card': '8px 8px 0',
+            'card-sm': '6px 6px 0',
+            'btn': '0 6px 0',
+          },
+        }
+      }
+    }
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="font-body bg-[#FFFBF4] text-dark antialiased overflow-x-hidden">
 
   <!-- ===== NAV ===== -->
-  <nav class="nav">
-    <div class="container nav-container">
-      <div class="nav-brand">
-        <div class="nav-logo"><img src="https://image.web.id/images/codepolitan-logoc787963e27f753de.png"
-            alt="CODEPOLITAN Junior"></div>
+  <nav class="sticky top-0 z-50 bg-[rgba(255,251,244,.88)] backdrop-blur-md border-b-2 border-border">
+    <div
+      class="container max-w-[1375px] mx-auto flex items-center justify-between gap-4 px-[clamp(16px,4vw,40px)] py-3">
+      <div class="flex items-center gap-2.5">
+        <div class="h-12 flex items-center"><img src="https://image.web.id/images/codepolitan-logoc787963e27f753de.png"
+            alt="CODEPOLITAN Junior" class="h-full w-auto block"></div>
       </div>
-      <div class="nav-links">
-        <a href="#program" class="nav-link">Program</a>
-        <a href="#cara-kerja" class="nav-link">Cara Belajar</a>
-        <a href="#untuk-sekolah" class="nav-link">Untuk Sekolah</a>
-        <a href="#trial" class="btn-nav-cta">Coba Trial <i class="fa-solid fa-wand-magic-sparkles"></i></a>
+      <!-- Hamburger -->
+      <button
+        class="nav-menu-btn items-center justify-center w-10 h-10 rounded-xl border-2 border-dark bg-transparent cursor-pointer text-dark text-xl"
+        id="navMenuBtn" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="flex gap-1.5 items-center nav-links" id="navLinks">
+        <a href="#program"
+          class="font-bold text-sm text-muted-link no-underline px-3.5 py-2 rounded-xl hover:bg-[#F3ECFF] hover:text-dark transition-colors">Program</a>
+        <a href="#cara-kerja"
+          class="font-bold text-sm text-muted-link no-underline px-3.5 py-2 rounded-xl hover:bg-[#F3ECFF] hover:text-dark transition-colors">Cara
+          Belajar</a>
+        <a href="#untuk-sekolah"
+          class="font-bold text-sm text-muted-link no-underline px-3.5 py-2 rounded-xl hover:bg-[#F3ECFF] hover:text-dark transition-colors">Untuk
+          Sekolah</a>
+        <a href="#trial"
+          class="font-display font-bold text-[15px] text-white no-underline bg-green px-5 py-2.5 rounded-xl shadow-[0_4px_0_#0E9A78] ml-1.5 hover:-translate-y-0.5 hover:shadow-[0_6px_0_#0E9A78] active:translate-y-0.5 active:shadow-[0_2px_0_#0E9A78] transition-all">Coba
+          Trial <i class="fa-solid fa-wand-magic-sparkles"></i></a>
       </div>
     </div>
   </nav>
 
   <!-- ===== HERO ===== -->
-  <section class="section-hero">
-    <div aria-hidden="true" class="confetti-layer">
+  <section
+    class="from-[#FDF4D8] to-[#FFFFFF] bg-gradient-to-b relative px-[clamp(20px,5vw,56px)] py-[clamp(48px,6vw,80px)] pb-[clamp(56px,7vw,90px)]">
+    <div aria-hidden="true" class="absolute inset-0 overflow-hidden pointer-events-none">
       <div class="confetti-item confetti-star-1">✦</div>
       <div class="confetti-item confetti-game"><img src="images/bracket.png" alt="" class="confetti-img"></div>
       <div class="confetti-item confetti-circle-gold"></div>
@@ -54,74 +114,83 @@
       <div class="confetti-item code-symbol code-symbol--1" aria-hidden="true">{ }</div>
       <div class="confetti-item code-symbol code-symbol--3" aria-hidden="true">( )</div>
       <div class="confetti-item code-symbol code-symbol--4" aria-hidden="true">##</div>
-
-      <!-- Bintang 4 titik SVG -->
-      <div class="confetti-item sparkle-star sparkle-star--1" aria-hidden="true">
-        <svg width="16" height="16" viewBox="0 0 16 16">
-          <path d="M8 0 L9.5 6.5 L16 8 L9.5 9.5 L8 16 L6.5 9.5 L0 8 L6.5 6.5 Z" fill="#1D9E75" />
-        </svg>
-      </div>
-      <div class="confetti-item sparkle-star sparkle-star--2" aria-hidden="true">
-        <svg width="12" height="12" viewBox="0 0 16 16">
-          <path d="M8 0 L9.5 6.5 L16 8 L9.5 9.5 L8 16 L6.5 9.5 L0 8 L6.5 6.5 Z" fill="#EF9F27" />
-        </svg>
-      </div>
-      <div class="confetti-item sparkle-star sparkle-star--3" aria-hidden="true">
-        <svg width="10" height="10" viewBox="0 0 16 16">
-          <path d="M8 0 L9.5 6.5 L16 8 L9.5 9.5 L8 16 L6.5 9.5 L0 8 L6.5 6.5 Z" fill="#9B7FD4" />
-        </svg>
-      </div>
     </div>
 
-    <div class="hero-inner container">
+    <div class="flex flex-wrap gap-[clamp(32px,5vw,64px)] items-center relative max-w-[1280px] mx-auto">
       <!-- Left: copy -->
-      <div class="hero-left">
-        <div class="hero-badge">
+      <div class="flex-[1_1_380px] min-w-[300px]">
+        <div
+          class="inline-flex items-center gap-2 bg-white border-2 border-dark rounded-full px-4 py-1.5 font-extrabold text-[13px] shadow-[3px_3px_0_#FFC93C] mb-5">
           CODEPOLITAN JUNIOR
         </div>
-        <h1 class="hero-title">
-          Anak Anda Bisa Membuat <span class="highlight">Game-nya Sendiri</span>. Bukan Cuma Memainkannya.
+        <h1
+          class="font-display font-extrabold text-[clamp(34px,5vw,56px)] leading-[1.04] tracking-[-.02em] text-dark mb-[18px]">
+          Bantu Anak Anda Membangun <span
+            class="text-yellow bg-[linear-gradient(transparent_62%,#FFE7A7_62%)] px-1 rounded">Skills Masa
+            Depan.</span>
+          Melalui Coding yang Menyenangkan
         </h1>
-        <p class="hero-desc">
-          Kelas coding &amp; AI untuk anak usia <strong>7–13 tahun</strong>. Belajar langsung, suasananya seru,
-          materinya nyambung dengan kebutuhan sekolah sekarang.
+        <p class="text-[clamp(16px,1.5vw,19px)] text-muted leading-relaxed font-medium max-w-[440px] mb-[30px]">
+          Anak belajar membuat <strong class="text-dark">game</strong>, <strong class="text-dark">website</strong>,
+          hingga <strong class="text-dark">aplikasi
+            sederhana</strong> melalui praktik langsung, didampingi instruktur
+          secara personal, dan berkembang sesuai level belajarnya.
         </p>
-        <div class="hero-ctas">
-          <a href="#trial" class="btn-hero-primary">Coba Kelas Trial Gratis →</a>
-          <a href="#program" class="btn-hero-secondary">Lihat Program</a>
+        <div class="flex gap-3.5 flex-wrap items-center">
+          <a href="#program"
+            class="font-display font-bold text-lg text-white no-underline bg-red px-[30px] py-4 rounded-2xl shadow-[0_6px_0_#E04A3D] hover:-translate-y-0.5 hover:shadow-[0_8px_0_#E04A3D] active:translate-y-1 active:shadow-[0_3px_0_#E04A3D] transition-all">
+            Lihat Program Belajar →</a>
+          <a href="https://wa.me/62XXXXXXXXXX" target="_blank" rel="noopener"
+            class="font-display font-bold text-lg text-dark no-underline bg-white border-2 border-dark px-7 py-3.5 rounded-2xl shadow-[0_6px_0_#FFB800] hover:-translate-y-0.5 active:translate-y-1 active:shadow-[0_3px_0_rgba(43,36,64,.18)] transition-all">
+            Gabung Komunitas Orang Tua</a>
         </div>
-        <div class="hero-social-proof">
-          <div class="hero-avatars">
-            <div class="hero-avatar hero-avatar--yellow"><i class="fa-solid fa-child"></i></div>
-            <div class="hero-avatar hero-avatar--blue"><i class="fa-solid fa-child-dress"></i></div>
-            <div class="hero-avatar hero-avatar--pink"><i class="fa-solid fa-person"></i></div>
+        <div class="flex items-center gap-3 mt-[26px]">
+          <div class="flex">
+            <div
+              class="w-[34px] h-[34px] rounded-full border-[2.5px] border-[#FFFBF4] flex items-center justify-center text-base bg-yellow -ml-0 first:ml-0">
+              <i class="fa-solid fa-child"></i>
+            </div>
+            <div
+              class="w-[34px] h-[34px] rounded-full border-[2.5px] border-[#FFFBF4] flex items-center justify-center text-base bg-blue -ml-2.5">
+              <i class="fa-solid fa-child-dress"></i>
+            </div>
+            <div
+              class="w-[34px] h-[34px] rounded-full border-[2.5px] border-[#FFFBF4] flex items-center justify-center text-base bg-pink -ml-2.5">
+              <i class="fa-solid fa-person"></i>
+            </div>
           </div>
-          <div class="hero-social-text">
-            <strong>223rb+</strong> keluarga sudah belajar bareng CODEPOLITAN
+          <div class="text-[13.5px] font-semibold text-muted">
+            <strong class="text-dark">223rb+</strong> keluarga sudah belajar bareng CODEPOLITAN
           </div>
         </div>
       </div>
 
       <!-- Right: illustration -->
-      <div class="hero-right">
-        <div class="hero-scene">
-          <img src="images/logika.png" alt="Contoh project coding Scratch" class="hero-scratch">
-          <img src="images/biko-new.png" alt="BIKO maskot CODEPOLITAN Junior" class="hero-biko">
+      <div class="flex-[1_1_360px] min-w-[300px] flex justify-center relative">
+        <div class="relative w-[min(100%,480px)]">
+          <img src="images/logika.png" alt="Contoh project coding Scratch"
+            class="relative block w-[68%] h-auto -ml-[10%] rounded-2xl z-[1] animate-[bobtilt_5s_ease-in-out_infinite]">
+          <img src="images/biko-new.png" alt="BIKO maskot CODEPOLITAN Junior"
+            class="absolute bottom-[-24%] right-[4%] w-[68%] h-auto z-[2]">
 
           <!-- Speech bubble BIKO -->
-          <img src="images/percakapan.png" alt="" class="biko-bubble" aria-hidden="true">
+          <img src="images/percakapan.png" alt=""
+            class="absolute bottom-[10%] right-[-14%] z-[4] w-[140px] h-auto pointer-events-none animate-[floatY_5s_ease-in-out_infinite] [animation-delay:0.3s]"
+            aria-hidden="true">
 
           <!-- Card kanan atas -->
-          <div class="hero-float-card hero-float-card--top">
-            <span class="hfc-icon"><i class="fa-solid fa-brain"></i></span>
-            <span class="hfc-text">Logika × <i class="fa-solid fa-palette"></i> Kreativitas = <i
+          <div
+            class="absolute flex items-center gap-2 bg-[#FBCB4A] border-[#FBCB4A] rounded-full px-[22px] py-[13px] font-body text-[15px] font-bold text-[#3D3D3D] whitespace-nowrap shadow-[3px_3px_0_#d4a520] z-[3] pointer-events-none top-[18%] right-[-2%] animate-[floatY_6s_ease-in-out_infinite] [animation-delay:0.5s]">
+            <span class="text-base leading-none shrink-0"><i class="fa-solid fa-brain"></i></span>
+            <span class="leading-tight">Logika × <i class="fa-solid fa-palette"></i> Kreativitas = <i
                 class="fa-solid fa-rocket"></i> Karya</span>
           </div>
 
           <!-- Card kiri bawah -->
-          <div class="hero-float-card hero-float-card--bottom">
-            <span class="hfc-icon"><i class="fa-solid fa-circle-check"></i></span>
-            <span class="hfc-text">Mulai dari nol pun bisa</span>
+          <div
+            class="absolute flex items-center gap-2 bg-white border-[#17C098] rounded-full px-[22px] py-[13px] font-body text-[15px] font-bold text-[#3D3D3D] whitespace-nowrap shadow-[3px_3px_0_#0e8f6e] z-[3] pointer-events-none bottom-[-16%] left-[-4%] animate-[floatCard_7s_ease-in-out_infinite] [animation-delay:1.2s] [animation-fill-mode:both]">
+            <span class="text-base leading-none shrink-0 text-[#419D43]"><i class="fa-solid fa-circle-check"></i></span>
+            <span class="leading-tight">Mulai dari nol pun bisa</span>
           </div>
         </div>
       </div>
@@ -129,33 +198,44 @@
   </section>
 
   <!-- ===== PROBLEM ===== -->
-  <section class="section-problem">
-    <div class="container">
+  <section class="bg-problem-bg px-[clamp(20px,5vw,56px)] py-[clamp(56px,7vw,96px)]">
+    <div class="max-w-[1280px] mx-auto">
       <div data-reveal>
-        <div class="section-badge badge-problem"><i class="fa-solid fa-comment-dots"></i> Kekhawatiran orang tua</div>
-        <h2 class="section-title">Anda mungkin pernah merasakan ini.</h2>
-        <p class="section-subtitle">Bukan cuma Anda. Hampir semua orang tua yang datang ke kami mulai dari titik yang
+        <div
+          class="inline-flex items-center gap-2 bg-white border-2 border-dark rounded-full px-[15px] py-1.5 font-extrabold text-[13px] shadow-[3px_3px_0_#FF7BAC]">
+          <i class="fa-solid fa-comment-dots"></i> Kekhawatiran orang tua
+        </div>
+        <h2 class="font-display font-extrabold text-[clamp(26px,3.6vw,40px)] leading-[1.08] text-dark mt-[18px] mb-3">
+          Anda mungkin pernah merasakan ini.</h2>
+        <p class="text-[clamp(16px,1.4vw,18px)] text-muted leading-relaxed font-medium max-w-[620px] mb-[38px]">Bukan
+          cuma Anda. Hampir semua orang tua yang datang ke kami mulai dari titik yang
           sama.</p>
       </div>
-      <div class="problem-grid">
-        <div data-reveal class="problem-card problem-card--orange">
-          <div class="problem-icon problem-icon--orange"><i class="fa-solid fa-tv"></i></div>
-          <p class="problem-text">
-            <strong>Screen time tapi pasif.</strong>
+      <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-5">
+        <div data-reveal
+          class="bg-white rounded-[22px] p-7 shadow-[0_8px_26px_rgba(43,36,64,.05)] border-2 border-[#FFE0C2] hover:shadow-[0_16px_34px_rgba(43,36,64,.1)] hover:-translate-y-1.5 hover:-rotate-1 transition-all">
+          <div class="w-[54px] h-[54px] rounded-2xl flex items-center justify-center text-[28px] mb-4 bg-[#FFE7D1]"><i
+              class="fa-solid fa-tv"></i></div>
+          <p class="text-[15.5px] text-muted leading-relaxed font-medium">
+            <strong class="text-dark font-display font-bold block text-[17px] mb-1">Screen time tapi pasif.</strong>
             Anak berjam-jam di layar, tapi lebih banyak menonton dan main game daripada membuat sesuatu.
           </p>
         </div>
-        <div data-reveal class="problem-card problem-card--blue">
-          <div class="problem-icon problem-icon--blue"><i class="fa-solid fa-compass"></i></div>
-          <p class="problem-text">
-            <strong>Bingung mulai dari mana.</strong>
+        <div data-reveal
+          class="bg-white rounded-[22px] p-7 shadow-[0_8px_26px_rgba(43,36,64,.05)] border-2 border-[#D9E6FF] hover:shadow-[0_16px_34px_rgba(43,36,64,.1)] hover:-translate-y-1.5 hover:rotate-1 transition-all">
+          <div class="w-[54px] h-[54px] rounded-2xl flex items-center justify-center text-[28px] mb-4 bg-[#E1ECFF]"><i
+              class="fa-solid fa-compass"></i></div>
+          <p class="text-[15.5px] text-muted leading-relaxed font-medium">
+            <strong class="text-dark font-display font-bold block text-[17px] mb-1">Bingung mulai dari mana.</strong>
             Ingin anak melek teknologi, tapi sulit menemukan tempat yang benar-benar paham cara mengajar anak.
           </p>
         </div>
-        <div data-reveal class="problem-card problem-card--green">
-          <div class="problem-icon problem-icon--green"><i class="fa-solid fa-school"></i></div>
-          <p class="problem-text">
-            <strong>Sekolah sudah berubah.</strong>
+        <div data-reveal
+          class="bg-white rounded-[22px] p-7 shadow-[0_8px_26px_rgba(43,36,64,.05)] border-2 border-[#CFF4E7] hover:shadow-[0_16px_34px_rgba(43,36,64,.1)] hover:-translate-y-1.5 hover:-rotate-1 transition-all">
+          <div class="w-[54px] h-[54px] rounded-2xl flex items-center justify-center text-[28px] mb-4 bg-[#D5F5EB]"><i
+              class="fa-solid fa-school"></i></div>
+          <p class="text-[15.5px] text-muted leading-relaxed font-medium">
+            <strong class="text-dark font-display font-bold block text-[17px] mb-1">Sekolah sudah berubah.</strong>
             Mata pelajaran Koding &amp; AI sudah masuk kurikulum. Jendela waktunya terbuka, tapi tidak selama yang kita
             kira.
           </p>
@@ -165,53 +245,67 @@
   </section>
 
   <!-- ===== AUTHORITY ===== -->
-  <section class="section-authority">
-    <div class="container">
+  <section class="px-[clamp(20px,5vw,56px)] py-[clamp(56px,7vw,96px)]">
+    <div class="max-w-[1280px] mx-auto">
       <div data-reveal>
-        <div class="section-badge badge-authority"><i class="fa-solid fa-star"></i> Pemandu</div>
-        <h2 class="section-title">Kami sudah ada di dunia ini sebelum anak Anda lahir.</h2>
-        <p class="section-subtitle section-subtitle--wide">
+        <div
+          class="inline-flex items-center gap-2 bg-white border-2 border-dark rounded-full px-[15px] py-1.5 font-extrabold text-[13px] shadow-[3px_3px_0_#4D7CFF]">
+          <i class="fa-solid fa-star"></i> Pemandu
+        </div>
+        <h2 class="font-display font-extrabold text-[clamp(26px,3.6vw,40px)] leading-[1.08] text-dark mt-[18px] mb-3">
+          Kami sudah ada di dunia ini sebelum anak Anda lahir.</h2>
+        <p class="text-[clamp(16px,1.4vw,18px)] text-muted leading-relaxed font-medium max-w-[640px] mb-[38px]">
           Sejak 2016, CODEPOLITAN membantu lebih dari 223.000 orang Indonesia belajar teknologi. CODEPOLITAN Junior
           adalah lanjutan misi yang sama, dirancang khusus untuk anak usia sekolah.
         </p>
       </div>
-      <div data-reveal class="stats-grid">
-        <div class="stat-card stat-card--yellow">
-          <div class="stat-number" data-target="223" data-suffix="rb+">223rb+</div>
-          <div class="stat-label">member aktif</div>
+      <div data-reveal class="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-4 mb-10">
+        <div class="rounded-[18px] p-[22px_16px] text-center border-2 bg-[#FFF7E2] border-yellow">
+          <div class="font-display font-extrabold text-[clamp(28px,3vw,36px)] text-[#E6A200]" data-target="223"
+            data-suffix="rb+">223rb+</div>
+          <div class="text-[12.5px] text-muted-lighter font-bold mt-0.5">member aktif</div>
         </div>
-        <div class="stat-card stat-card--green">
-          <div class="stat-number" data-target="10" data-suffix=" thn">10 thn</div>
-          <div class="stat-label">pengalaman</div>
+        <div class="rounded-[18px] p-[22px_16px] text-center border-2 bg-[#EAF8F3] border-green">
+          <div class="font-display font-extrabold text-[clamp(28px,3vw,36px)] text-green-dark" data-target="10"
+            data-suffix=" thn">10 thn</div>
+          <div class="text-[12.5px] text-muted-lighter font-bold mt-0.5">pengalaman</div>
         </div>
-        <div class="stat-card stat-card--purple">
-          <div class="stat-number" data-target="23" data-suffix="rb+">23rb+</div>
-          <div class="stat-label">penerima beasiswa</div>
+        <div class="rounded-[18px] p-[22px_16px] text-center border-2 bg-[#EEE9FF] border-purple">
+          <div class="font-display font-extrabold text-[clamp(28px,3vw,36px)] text-[#7A47E6]" data-target="23"
+            data-suffix="rb+">23rb+</div>
+          <div class="text-[12.5px] text-muted-lighter font-bold mt-0.5">penerima beasiswa</div>
         </div>
-        <div class="stat-card stat-card--pink">
-          <div class="stat-number" data-target="50" data-suffix="+">50+</div>
-          <div class="stat-label">mitra korporat &amp; pemerintah</div>
+        <div class="rounded-[18px] p-[22px_16px] text-center border-2 bg-[#FFEAF2] border-pink">
+          <div class="font-display font-extrabold text-[clamp(28px,3vw,36px)] text-[#E14E86]" data-target="50"
+            data-suffix="+">50+</div>
+          <div class="text-[12.5px] text-muted-lighter font-bold mt-0.5">mitra korporat &amp; pemerintah</div>
         </div>
       </div>
-      <div class="authority-points">
-        <div data-reveal class="authority-point">
-          <div class="point-icon point-icon--green"><i class="fa-solid fa-check"></i></div>
-          <p class="point-text">
-            <strong>Kurikulum dari praktisi nyata.</strong> Disusun oleh tim yang sudah membantu ribuan developer
+      <div class="flex flex-col gap-4">
+        <div data-reveal class="flex gap-4 items-start bg-white border-2 border-border rounded-[18px] p-5 px-[22px]">
+          <div class="w-10 h-10 rounded-xl bg-green text-white flex items-center justify-center shrink-0 text-xl"><i
+              class="fa-solid fa-check"></i></div>
+          <p class="text-[15.5px] text-muted leading-relaxed font-medium">
+            <strong class="text-dark font-display font-bold">Kurikulum dari praktisi nyata.</strong> Disusun oleh tim
+            yang sudah membantu ribuan developer
             Indonesia berkarier, bukan sekadar materi buku teks.
           </p>
         </div>
-        <div data-reveal class="authority-point">
-          <div class="point-icon point-icon--blue"><i class="fa-solid fa-check"></i></div>
-          <p class="point-text">
-            <strong>Cara mengajar sesuai usia.</strong> Pengajar dilatih untuk berbicara dengan anak, bukan memaksakan
+        <div data-reveal class="flex gap-4 items-start bg-white border-2 border-border rounded-[18px] p-5 px-[22px]">
+          <div class="w-10 h-10 rounded-xl bg-blue text-white flex items-center justify-center shrink-0 text-xl"><i
+              class="fa-solid fa-check"></i></div>
+          <p class="text-[15.5px] text-muted leading-relaxed font-medium">
+            <strong class="text-dark font-display font-bold">Cara mengajar sesuai usia.</strong> Pengajar dilatih untuk
+            berbicara dengan anak, bukan memaksakan
             cara belajar orang dewasa ke anak.
           </p>
         </div>
-        <div data-reveal class="authority-point">
-          <div class="point-icon point-icon--purple"><i class="fa-solid fa-check"></i></div>
-          <p class="point-text">
-            <strong>Jalur belajar yang menyambung.</strong> Anak yang besar bersama CODEPOLITAN Junior punya jalur
+        <div data-reveal class="flex gap-4 items-start bg-white border-2 border-border rounded-[18px] p-5 px-[22px]">
+          <div class="w-10 h-10 rounded-xl bg-purple text-white flex items-center justify-center shrink-0 text-xl"><i
+              class="fa-solid fa-check"></i></div>
+          <p class="text-[15.5px] text-muted leading-relaxed font-medium">
+            <strong class="text-dark font-display font-bold">Jalur belajar yang menyambung.</strong> Anak yang besar
+            bersama CODEPOLITAN Junior punya jalur
             lanjut ke ekosistem CODEPOLITAN dewasa. Tidak ada tempat lain yang punya ini.
           </p>
         </div>
@@ -220,60 +314,92 @@
   </section>
 
   <!-- ===== PROGRAM ===== -->
-  <section id="program" class="section-program">
-    <div class="container">
+  <section id="program" class="bg-program-bg px-[clamp(20px,5vw,56px)] py-[clamp(56px,7vw,96px)]">
+    <div class="max-w-[1280px] mx-auto">
       <div data-reveal>
-        <div class="section-badge badge-program"><i class="fa-solid fa-bullseye"></i> Program</div>
-        <h2 class="section-title">Setiap usia punya cara belajarnya sendiri.</h2>
-        <p class="section-subtitle">Kelas kecil, 6–8 anak per sesi. Satu kali seminggu. Tersedia juga kelas intensif dan
+        <div
+          class="inline-flex items-center gap-2 bg-white border-2 border-dark rounded-full px-[15px] py-1.5 font-extrabold text-[13px] shadow-[3px_3px_0_#16C098]">
+          <i class="fa-solid fa-bullseye"></i> Program
+        </div>
+        <h2 class="font-display font-extrabold text-[clamp(26px,3.6vw,40px)] leading-[1.08] text-dark mt-[18px] mb-3">
+          Setiap usia punya cara belajarnya sendiri.</h2>
+        <p class="text-[clamp(16px,1.4vw,18px)] text-muted leading-relaxed font-medium max-w-[620px] mb-[38px]">Kelas
+          kecil, 6–8 anak per sesi. Satu kali seminggu. Tersedia juga kelas intensif dan
           privat 1:1.</p>
       </div>
-      <div class="program-grid">
+      <div class="grid grid-cols-[repeat(auto-fit,minmax(290px,1fr))] gap-[22px] mb-5">
         <!-- Explorer -->
-        <div data-reveal class="program-card program-card--explorer">
-          <span class="program-tag program-tag--green"><i class="fa-solid fa-seedling"></i> Usia 7–9 tahun</span>
-          <div class="program-card-title">Junior Explorer</div>
-          <div class="program-card-desc">Untuk anak yang baru mulai berkenalan dengan coding</div>
-          <ul class="program-features">
-            <li><i class="fa-solid fa-check bullet--green"></i> Scratch &amp; pemrograman visual</li>
-            <li><i class="fa-solid fa-check bullet--green"></i> Modding Roblox dasar</li>
-            <li><i class="fa-solid fa-check bullet--green"></i> Robotik pengantar</li>
-            <li><i class="fa-solid fa-check bullet--green"></i> Proyek kecil yang bisa dipamerkan</li>
+        <div data-reveal
+          class="bg-white border-2 border-dark rounded-3xl p-[30px] relative shadow-[8px_8px_0_#FFC93C] hover:-translate-y-1.5 hover:shadow-[12px_14px_0_#FFC93C] transition-all">
+          <span
+            class="inline-block font-extrabold text-xs px-3 py-1 rounded-full mb-3.5 bg-[#EAF8F3] text-green-dark"><i
+              class="fa-solid fa-seedling"></i> Usia 7–9 tahun</span>
+          <div class="font-display font-extrabold text-2xl text-dark">Junior Explorer</div>
+          <div class="text-[13.5px] text-muted-light font-semibold mb-[18px]">Untuk anak yang baru mulai berkenalan
+            dengan coding</div>
+          <ul class="list-none p-0 mb-[22px] flex flex-col gap-2.5">
+            <li class="flex items-center gap-2.5 text-[14.5px] text-muted-link font-semibold"><i
+                class="fa-solid fa-check text-green font-extrabold"></i> Scratch &amp; pemrograman visual</li>
+            <li class="flex items-center gap-2.5 text-[14.5px] text-muted-link font-semibold"><i
+                class="fa-solid fa-check text-green font-extrabold"></i> Modding Roblox dasar</li>
+            <li class="flex items-center gap-2.5 text-[14.5px] text-muted-link font-semibold"><i
+                class="fa-solid fa-check text-green font-extrabold"></i> Robotik pengantar</li>
+            <li class="flex items-center gap-2.5 text-[14.5px] text-muted-link font-semibold"><i
+                class="fa-solid fa-check text-green font-extrabold"></i> Proyek kecil yang bisa dipamerkan</li>
           </ul>
-          <div class="program-price">Rp 550.000 <span>/ bulan</span></div>
+          <div class="font-display font-extrabold text-[26px] text-dark">Rp 550.000 <span
+              class="text-sm font-semibold text-muted-light">/ bulan</span></div>
         </div>
         <!-- Builder (featured) -->
-        <div data-reveal class="program-card program-card--builder">
-          <div class="program-badge-popular"><i class="fa-solid fa-fire"></i> Paling diminati</div>
-          <span class="program-tag program-tag--purple"><i class="fa-solid fa-rocket"></i> Usia 10–13 tahun</span>
-          <div class="program-card-title">Junior Builder</div>
-          <div class="program-card-desc">Untuk anak yang siap membuat karya yang lebih serius</div>
-          <ul class="program-features">
-            <li><i class="fa-solid fa-check bullet--purple"></i> Scratch lanjutan &amp; Python pengantar</li>
-            <li><i class="fa-solid fa-check bullet--purple"></i> Web dasar &amp; pembuatan game</li>
-            <li><i class="fa-solid fa-check bullet--purple"></i> Pengenalan alat AI</li>
-            <li><i class="fa-solid fa-check bullet--purple"></i> Showcase project di komunitas CODEPOLITAN</li>
+        <div data-reveal
+          class="bg-white border-2 border-dark rounded-3xl p-[30px] relative shadow-[8px_8px_0_#16C098] hover:-translate-y-1.5 hover:shadow-[12px_14px_0_#16C098] transition-all">
+          <div
+            class="absolute -top-[15px] right-[22px] bg-red text-white font-display font-bold text-[12.5px] px-3.5 py-1.5 rounded-full border-2 border-dark shadow-[2px_2px_0_#2B2440]">
+            <i class="fa-solid fa-fire"></i> Paling diminati
+          </div>
+          <span class="inline-block font-extrabold text-xs px-3 py-1 rounded-full mb-3.5 bg-[#EEE9FF] text-[#7A47E6]"><i
+              class="fa-solid fa-rocket"></i> Usia 10–13 tahun</span>
+          <div class="font-display font-extrabold text-2xl text-dark">Junior Builder</div>
+          <div class="text-[13.5px] text-muted-light font-semibold mb-[18px]">Untuk anak yang siap membuat karya yang
+            lebih serius</div>
+          <ul class="list-none p-0 mb-[22px] flex flex-col gap-2.5">
+            <li class="flex items-center gap-2.5 text-[14.5px] text-muted-link font-semibold"><i
+                class="fa-solid fa-check text-purple font-extrabold"></i> Scratch lanjutan &amp; Python pengantar</li>
+            <li class="flex items-center gap-2.5 text-[14.5px] text-muted-link font-semibold"><i
+                class="fa-solid fa-check text-purple font-extrabold"></i> Web dasar &amp; pembuatan game</li>
+            <li class="flex items-center gap-2.5 text-[14.5px] text-muted-link font-semibold"><i
+                class="fa-solid fa-check text-purple font-extrabold"></i> Pengenalan alat AI</li>
+            <li class="flex items-center gap-2.5 text-[14.5px] text-muted-link font-semibold"><i
+                class="fa-solid fa-check text-purple font-extrabold"></i> Showcase project di komunitas CODEPOLITAN</li>
           </ul>
-          <div class="program-price-row">
-            <div class="program-price">Rp 650.000 <span>/ bulan</span></div>
-            <span class="badge-curriculum">Sesuai Permendikdasmen 13/2025</span>
+          <div class="flex items-center justify-between flex-wrap gap-2.5">
+            <div class="font-display font-extrabold text-[26px] text-dark">Rp 650.000 <span
+                class="text-sm font-semibold text-muted-light">/ bulan</span></div>
+            <span class="font-bold text-[11px] px-2.5 py-1 rounded-full bg-[#FFF1DC] text-[#B26B00]">Sesuai
+              Permendikdasmen 13/2025</span>
           </div>
         </div>
       </div>
       <!-- Extras -->
-      <div class="program-extras">
-        <div data-reveal class="extra-card extra-card--blue">
-          <div class="extra-icon extra-icon--blue"><i class="fa-solid fa-chalkboard-user"></i></div>
+      <div class="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-4">
+        <div data-reveal
+          class="flex gap-[15px] items-center bg-white rounded-[18px] p-5 px-[22px] border-2 border-[#D9E6FF]">
+          <div class="w-[50px] h-[50px] rounded-xl flex items-center justify-center text-[26px] shrink-0 bg-[#E1ECFF]">
+            <i class="fa-solid fa-chalkboard-user"></i>
+          </div>
           <div>
-            <div class="extra-title">Privat 1:1</div>
-            <div class="extra-price">Slot terbatas · Rp 850.000 / bulan</div>
+            <div class="font-display font-bold text-base text-dark">Privat 1:1</div>
+            <div class="text-[13px] text-muted-lighter font-semibold">Slot terbatas · Rp 850.000 / bulan</div>
           </div>
         </div>
-        <div data-reveal class="extra-card extra-card--orange">
-          <div class="extra-icon extra-icon--orange"><i class="fa-solid fa-sun"></i></div>
+        <div data-reveal
+          class="flex gap-[15px] items-center bg-white rounded-[18px] p-5 px-[22px] border-2 border-[#FFE0C2]">
+          <div class="w-[50px] h-[50px] rounded-xl flex items-center justify-center text-[26px] shrink-0 bg-[#FFE7D1]">
+            <i class="fa-solid fa-sun"></i>
+          </div>
           <div>
-            <div class="extra-title">Holiday Camp</div>
-            <div class="extra-price">5 hari × 3 jam saat liburan · Rp 1.500.000</div>
+            <div class="font-display font-bold text-base text-dark">Holiday Camp</div>
+            <div class="text-[13px] text-muted-lighter font-semibold">5 hari × 3 jam saat liburan · Rp 1.500.000</div>
           </div>
         </div>
       </div>
@@ -281,29 +407,49 @@
   </section>
 
   <!-- ===== STEPS ===== -->
-  <section id="cara-kerja" class="section-steps">
-    <div class="container">
+  <section id="cara-kerja" class="px-[clamp(20px,5vw,56px)] py-[clamp(56px,7vw,96px)]">
+    <div class="max-w-[1280px] mx-auto">
       <div data-reveal>
-        <div class="section-badge badge-steps"><i class="fa-solid fa-star"></i> Cara kerja</div>
-        <h2 class="section-title">Mulainya gampang banget.</h2>
-        <p class="section-subtitle">Tidak perlu langsung komitmen. Coba dulu, lihat sendiri apakah anak Anda cocok.</p>
-      </div>
-      <div class="steps-grid">
-        <div data-reveal class="step-card step-card--1">
-          <div class="step-number step-number--1">1</div>
-          <div class="step-title">Coba dulu. <i class="fa-solid fa-eye"></i></div>
-          <p class="step-desc">Daftarkan anak untuk kelas trial. Lihat sendiri suasananya dan apakah anak cocok.</p>
+        <div
+          class="inline-flex items-center gap-2 bg-white border-2 border-dark rounded-full px-[15px] py-1.5 font-extrabold text-[13px] shadow-[3px_3px_0_#FFC93C]">
+          <i class="fa-solid fa-star"></i> Cara kerja
         </div>
-        <div data-reveal class="step-card step-card--2">
-          <div class="step-number step-number--2">2</div>
-          <div class="step-title">Mulai rutin. <i class="fa-solid fa-calendar-days"></i></div>
-          <p class="step-desc">Kalau anak senang, daftarkan ke kelas reguler. Kami bantu pilih jenjang yang paling pas.
+        <h2 class="font-display font-extrabold text-[clamp(26px,3.6vw,40px)] leading-[1.08] text-dark mt-[18px] mb-3">
+          Mulainya gampang banget.</h2>
+        <p class="text-[clamp(16px,1.4vw,18px)] text-muted leading-relaxed font-medium max-w-[620px] mb-[38px]">Tidak
+          perlu langsung komitmen. Coba dulu, lihat sendiri apakah anak Anda cocok.</p>
+      </div>
+      <div class="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-5">
+        <div data-reveal
+          class="rounded-[22px] p-7 border-2 bg-[#FFF7E2] border-yellow hover:-translate-y-1.5 hover:-rotate-1 transition-transform">
+          <div
+            class="w-12 h-12 rounded-xl font-display font-extrabold text-[22px] flex items-center justify-center mb-4 border-2 border-dark bg-yellow text-dark">
+            1</div>
+          <div class="font-display font-extrabold text-[19px] text-dark mb-[7px]">Coba dulu. <i
+              class="fa-solid fa-eye"></i></div>
+          <p class="text-[14.5px] text-muted leading-relaxed font-medium">Daftarkan anak untuk kelas trial. Lihat
+            sendiri suasananya dan apakah anak cocok.</p>
+        </div>
+        <div data-reveal
+          class="rounded-[22px] p-7 border-2 bg-[#EAF8F3] border-green hover:-translate-y-1.5 hover:rotate-1 transition-transform">
+          <div
+            class="w-12 h-12 rounded-xl font-display font-extrabold text-[22px] flex items-center justify-center mb-4 border-2 border-dark bg-green text-white">
+            2</div>
+          <div class="font-display font-extrabold text-[19px] text-dark mb-[7px]">Mulai rutin. <i
+              class="fa-solid fa-calendar-days"></i></div>
+          <p class="text-[14.5px] text-muted leading-relaxed font-medium">Kalau anak senang, daftarkan ke kelas reguler.
+            Kami bantu pilih jenjang yang paling pas.
           </p>
         </div>
-        <div data-reveal class="step-card step-card--3">
-          <div class="step-number step-number--3">3</div>
-          <div class="step-title">Lihat anak berkembang. <i class="fa-solid fa-seedling"></i></div>
-          <p class="step-desc">Dari karya pertama yang sederhana sampai anak yang makin percaya diri berpikir dan
+        <div data-reveal
+          class="rounded-[22px] p-7 border-2 bg-[#EEE9FF] border-purple hover:-translate-y-1.5 hover:-rotate-1 transition-transform">
+          <div
+            class="w-12 h-12 rounded-xl font-display font-extrabold text-[22px] flex items-center justify-center mb-4 border-2 border-dark bg-purple text-white">
+            3</div>
+          <div class="font-display font-extrabold text-[19px] text-dark mb-[7px]">Lihat anak berkembang. <i
+              class="fa-solid fa-seedling"></i></div>
+          <p class="text-[14.5px] text-muted leading-relaxed font-medium">Dari karya pertama yang sederhana sampai anak
+            yang makin percaya diri berpikir dan
             berkarya.</p>
         </div>
       </div>
@@ -311,106 +457,159 @@
   </section>
 
   <!-- ===== SOCIAL PROOF ===== -->
-  <section class="section-social-proof">
-    <div class="container">
+  <section class="bg-social-bg px-[clamp(20px,5vw,56px)] py-[clamp(56px,7vw,96px)]">
+    <div class="max-w-[1280px] mx-auto">
       <div data-reveal>
-        <div class="section-badge badge-social"><i class="fa-solid fa-champagne-glasses"></i> Bukti nyata</div>
-        <h2 class="section-title">Anak-anak ini sudah mulai berkarya.</h2>
-        <p class="section-subtitle">Karya dari anak-anak yang sudah mengikuti kelas di CODEPOLITAN Junior.</p>
+        <div
+          class="inline-flex items-center gap-2 bg-white border-2 border-dark rounded-full px-[15px] py-1.5 font-extrabold text-[13px] shadow-[3px_3px_0_#FF7BAC]">
+          <i class="fa-solid fa-champagne-glasses"></i> Bukti nyata
+        </div>
+        <h2 class="font-display font-extrabold text-[clamp(26px,3.6vw,40px)] leading-[1.08] text-dark mt-[18px] mb-3">
+          Anak-anak ini sudah mulai berkarya.</h2>
+        <p class="text-[clamp(16px,1.4vw,18px)] text-muted leading-relaxed font-medium max-w-[620px] mb-[38px]">Karya
+          dari anak-anak yang sudah mengikuti kelas di CODEPOLITAN Junior.</p>
       </div>
-      <div class="works-grid">
-        <div data-reveal class="work-card work-card--yellow">
-          <div class="work-thumbnail work-thumbnail--orange"><i class="fa-solid fa-gamepad"></i></div>
-          <div class="work-info">
-            <div class="work-title">Game Scratch</div>
-            <div class="work-meta">Usia 8 tahun · 4 minggu belajar</div>
+      <div class="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-[18px] mb-[30px]">
+        <div data-reveal
+          class="bg-white border-2 border-dark rounded-[22px] overflow-hidden shadow-[6px_6px_0_#FFC93C]">
+          <div
+            class="h-[130px] flex items-center justify-center text-[46px] border-b-2.5 border-dark bg-[repeating-linear-gradient(45deg,#FFE7D1,#FFE7D1_12px,#FFF1E6_12px,#FFF1E6_24px)]">
+            <i class="fa-solid fa-gamepad"></i>
+          </div>
+          <div class="p-[18px_20px] border-t-2 border-dark">
+            <div class="font-display font-bold text-base text-dark">Game Scratch</div>
+            <div class="text-[12.5px] text-muted-light font-semibold mt-0.5">Usia 8 tahun · 4 minggu belajar</div>
           </div>
         </div>
-        <div data-reveal class="work-card work-card--green">
-          <div class="work-thumbnail work-thumbnail--green"><i class="fa-solid fa-film"></i></div>
-          <div class="work-info">
-            <div class="work-title">Animasi Interaktif</div>
-            <div class="work-meta">Usia 10 tahun · 6 minggu belajar</div>
+        <div data-reveal
+          class="bg-white border-2 border-dark rounded-[22px] overflow-hidden shadow-[6px_6px_0_#16C098]">
+          <div
+            class="h-[130px] flex items-center justify-center text-[46px] border-b-2.5 border-dark bg-[repeating-linear-gradient(45deg,#D5F5EB,#D5F5EB_12px,#EAF8F3_12px,#EAF8F3_24px)]">
+            <i class="fa-solid fa-film"></i>
+          </div>
+          <div class="p-[18px_20px] border-t-2 border-dark">
+            <div class="font-display font-bold text-base text-dark">Animasi Interaktif</div>
+            <div class="text-[12.5px] text-muted-light font-semibold mt-0.5">Usia 10 tahun · 6 minggu belajar</div>
           </div>
         </div>
-        <div data-reveal class="work-card work-card--purple">
-          <div class="work-thumbnail work-thumbnail--blue"><i class="fa-solid fa-globe"></i></div>
-          <div class="work-info">
-            <div class="work-title">Website Pertama</div>
-            <div class="work-meta">Usia 12 tahun · 3 bulan belajar</div>
+        <div data-reveal
+          class="bg-white border-2 border-dark rounded-[22px] overflow-hidden shadow-[6px_6px_0_#9B6DFF]">
+          <div
+            class="h-[130px] flex items-center justify-center text-[46px] border-b-2.5 border-dark bg-[repeating-linear-gradient(45deg,#E1ECFF,#E1ECFF_12px,#EAF4FF_12px,#EAF4FF_24px)]">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <div class="p-[18px_20px] border-t-2 border-dark">
+            <div class="font-display font-bold text-base text-dark">Website Pertama</div>
+            <div class="text-[12.5px] text-muted-light font-semibold mt-0.5">Usia 12 tahun · 3 bulan belajar</div>
           </div>
         </div>
       </div>
-      <div class="testimonials-grid">
-        <div data-reveal class="testimonial-card">
-          <div class="testimonial-stars">
+      <div class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[18px] mb-4">
+        <div data-reveal
+          class="bg-white border-2 border-[#FFD0E2] rounded-[22px] p-[26px] shadow-[0_8px_26px_rgba(43,36,64,.05)]">
+          <div class="text-[28px] text-yellow mb-2">
             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
               class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
           </div>
-          <p class="testimonial-quote">"Anak saya awalnya ragu, tapi setelah kelas pertama langsung nanya kapan kelas
+          <p class="text-[15.5px] text-muted-link leading-relaxed font-medium mb-[18px]">"Anak saya awalnya ragu, tapi
+            setelah kelas pertama langsung nanya kapan kelas
             lagi. Dalam 2 bulan sudah bisa bikin game sendiri dan bangga banget nunjukkin ke teman-temannya."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar author-avatar--pink">RD</div>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-[42px] h-[42px] rounded-full bg-pink text-white font-display font-bold flex items-center justify-center shrink-0">
+              RD</div>
             <div>
-              <div class="author-name">Ibu Rida D.</div>
-              <div class="author-desc">Orang tua siswa usia 9 tahun</div>
+              <div class="font-display font-bold text-[15px] text-dark">Ibu Rida D.</div>
+              <div class="text-xs text-muted-light font-semibold">Orang tua siswa usia 9 tahun</div>
             </div>
           </div>
         </div>
-        <div data-reveal class="testimonial-card">
-          <div class="testimonial-stars">
+        <div data-reveal
+          class="bg-white border-2 border-[#FFD0E2] rounded-[22px] p-[26px] shadow-[0_8px_26px_rgba(43,36,64,.05)]">
+          <div class="text-[28px] text-yellow mb-2">
             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
               class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
           </div>
-          <p class="testimonial-quote">"Yang bikin saya tenang, pengajarnya sabar dan cara ngajarnya memang buat anak,
+          <p class="text-[15.5px] text-muted-link leading-relaxed font-medium mb-[18px]">"Yang bikin saya tenang,
+            pengajarnya sabar dan cara ngajarnya memang buat anak,
             bukan dipaksain kayak belajar di sekolah. Anak saya tidak pernah minta berhenti."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar author-avatar--blue">FA</div>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-[42px] h-[42px] rounded-full bg-blue text-white font-display font-bold flex items-center justify-center shrink-0">
+              FA</div>
             <div>
-              <div class="author-name">Bapak Fajar A.</div>
-              <div class="author-desc">Orang tua siswa usia 11 tahun</div>
+              <div class="font-display font-bold text-[15px] text-dark">Bapak Fajar A.</div>
+              <div class="text-xs text-muted-light font-semibold">Orang tua siswa usia 11 tahun</div>
             </div>
           </div>
         </div>
       </div>
-      <p data-reveal class="draft-notice"><i class="fa-solid fa-triangle-exclamation"></i> Ganti dengan kutipan &amp;
-        karya nyata dari peserta pilot sebelum publish (foto/screenshot asli).</p>
+      <p data-reveal
+        class="text-[12.5px] text-[#9A6A2E] font-semibold text-center p-[11px_16px] bg-[#FFF6E2] border-2 border-dashed border-yellow rounded-xl">
+        <i class="fa-solid fa-triangle-exclamation"></i> Ganti dengan kutipan &amp;
+        karya nyata dari peserta pilot sebelum publish (foto/screenshot asli).
+      </p>
     </div>
   </section>
 
   <!-- ===== GUARANTEE ===== -->
-  <section class="section-guarantee">
-    <div class="container">
+  <section class="px-[clamp(20px,5vw,56px)] py-[clamp(56px,7vw,96px)]">
+    <div class="max-w-[1280px] mx-auto">
       <div data-reveal>
-        <div class="section-badge badge-guarantee"><i class="fa-solid fa-shield-halved"></i> Jaminan</div>
-        <h2 class="section-title">Yang kami jaga untuk Anda.</h2>
-        <p class="section-subtitle">Kami tahu ini keputusan yang tidak kecil. Jadi kami pastikan tidak ada hal yang
+        <div
+          class="inline-flex items-center gap-2 bg-white border-2 border-dark rounded-full px-[15px] py-1.5 font-extrabold text-[13px] shadow-[3px_3px_0_#16C098]">
+          <i class="fa-solid fa-shield-halved"></i> Jaminan
+        </div>
+        <h2 class="font-display font-extrabold text-[clamp(26px,3.6vw,40px)] leading-[1.08] text-dark mt-[18px] mb-3">
+          Yang kami jaga untuk Anda.</h2>
+        <p class="text-[clamp(16px,1.4vw,18px)] text-muted leading-relaxed font-medium max-w-[620px] mb-[38px]">Kami
+          tahu ini keputusan yang tidak kecil. Jadi kami pastikan tidak ada hal yang
           membuat Anda ragu.</p>
       </div>
-      <div class="guarantee-grid">
-        <div data-reveal class="guarantee-item">
-          <div class="guarantee-check"><i class="fa-solid fa-check"></i></div>
-          <p class="guarantee-text">Kelas dirancang khusus untuk anak, bukan materi dewasa yang disederhanakan.</p>
+      <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4">
+        <div data-reveal
+          class="flex gap-3.5 items-start bg-[#EAF8F3] border-2 border-[#CFF4E7] rounded-[18px] p-5 px-[22px]">
+          <div
+            class="w-[30px] h-[30px] rounded-full bg-green text-white flex items-center justify-center shrink-0 text-sm">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <p class="text-[15px] text-[#46405A] leading-relaxed font-semibold">Kelas dirancang khusus untuk anak, bukan
+            materi dewasa yang disederhanakan.</p>
         </div>
-        <div data-reveal class="guarantee-item">
-          <div class="guarantee-check"><i class="fa-solid fa-check"></i></div>
-          <p class="guarantee-text">Kelas kecil, 6–8 anak per sesi. Pengajar punya waktu mendampingi setiap anak.</p>
+        <div data-reveal
+          class="flex gap-3.5 items-start bg-[#EAF8F3] border-2 border-[#CFF4E7] rounded-[18px] p-5 px-[22px]">
+          <div
+            class="w-[30px] h-[30px] rounded-full bg-green text-white flex items-center justify-center shrink-0 text-sm">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <p class="text-[15px] text-[#46405A] leading-relaxed font-semibold">Kelas kecil, 6–8 anak per sesi. Pengajar
+            punya waktu mendampingi setiap anak.</p>
         </div>
-        <div data-reveal class="guarantee-item">
-          <div class="guarantee-check"><i class="fa-solid fa-check"></i></div>
-          <p class="guarantee-text">Materi selaras dengan mata pelajaran Koding &amp; AI yang sudah masuk ke sekolah.
+        <div data-reveal
+          class="flex gap-3.5 items-start bg-[#EAF8F3] border-2 border-[#CFF4E7] rounded-[18px] p-5 px-[22px]">
+          <div
+            class="w-[30px] h-[30px] rounded-full bg-green text-white flex items-center justify-center shrink-0 text-sm">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <p class="text-[15px] text-[#46405A] leading-relaxed font-semibold">Materi selaras dengan mata pelajaran
+            Koding &amp; AI yang sudah masuk ke sekolah.
           </p>
         </div>
-        <div data-reveal class="guarantee-item">
-          <div class="guarantee-check"><i class="fa-solid fa-check"></i></div>
-          <p class="guarantee-text">Kalau setelah trial anak tidak cocok, tidak ada kewajiban untuk lanjut.</p>
+        <div data-reveal
+          class="flex gap-3.5 items-start bg-[#EAF8F3] border-2 border-[#CFF4E7] rounded-[18px] p-5 px-[22px]">
+          <div
+            class="w-[30px] h-[30px] rounded-full bg-green text-white flex items-center justify-center shrink-0 text-sm">
+            <i class="fa-solid fa-check"></i>
+          </div>
+          <p class="text-[15px] text-[#46405A] leading-relaxed font-semibold">Kalau setelah trial anak tidak cocok,
+            tidak ada kewajiban untuk lanjut.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== CTA ===== -->
-  <section id="trial" class="section-cta">
+  <section id="trial" class="relative bg-dark px-[clamp(20px,5vw,56px)] py-[clamp(56px,7vw,96px)] overflow-hidden">
     <div aria-hidden="true" class="cta-confetti-layer">
       <div class="cta-confetti-star"><i class="fa-solid fa-star"></i></div>
       <div class="cta-confetti-circle-red"></div>
@@ -418,13 +617,19 @@
       <div class="cta-confetti-square-blue"></div>
       <div class="cta-confetti-spark"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
     </div>
-    <div class="cta-inner">
+    <div class="max-w-[680px] mx-auto text-center relative">
       <div data-reveal>
-        <h2 class="cta-title">Anak Anda bisa mulai minggu ini. <i class="fa-solid fa-balloon"></i></h2>
-        <p class="cta-desc">Coba satu kelas dulu. Tidak perlu langsung komitmen.</p>
-        <div class="cta-buttons">
-          <a href="#" class="btn-cta-primary">Daftarkan Anak untuk Trial →</a>
-          <a href="https://wa.me/62XXXXXXXXXX" target="_blank" rel="noopener" class="btn-cta-secondary">
+        <h2 class="font-display font-extrabold text-[clamp(28px,4vw,46px)] leading-[1.06] text-white mb-3.5">Anak Anda
+          bisa mulai minggu ini. <i class="fa-solid fa-balloon"></i></h2>
+        <p
+          class="text-[clamp(16px,1.5vw,19px)] text-[#C7C0DA] leading-relaxed font-medium max-w-[460px] mx-auto mb-[34px]">
+          Coba satu kelas dulu. Tidak perlu langsung komitmen.</p>
+        <div class="flex gap-3.5 justify-center flex-wrap">
+          <a href="#"
+            class="font-display font-bold text-lg text-dark no-underline bg-yellow px-8 py-4 rounded-2xl shadow-[0_6px_0_#E0A800] hover:-translate-y-0.5 hover:shadow-[0_8px_0_#E0A800] active:translate-y-1 active:shadow-[0_3px_0_#E0A800] transition-all">Daftarkan
+            Anak untuk Trial →</a>
+          <a href="https://wa.me/62XXXXXXXXXX" target="_blank" rel="noopener"
+            class="inline-flex items-center gap-[9px] font-display font-bold text-lg text-white no-underline bg-transparent border-2 border-[#4C4666] px-7 py-3.5 rounded-2xl hover:bg-[rgba(255,255,255,.07)] hover:border-green transition-all">
             <i class="fa-solid fa-comment"></i> Tanya Dulu via WhatsApp
           </a>
         </div>
@@ -433,36 +638,52 @@
   </section>
 
   <!-- ===== LEAD MAGNET ===== -->
-  <section class="section-lead">
-    <div data-reveal class="lead-card">
-      <div class="lead-icon"><i class="fa-solid fa-gift"></i></div>
-      <h3 class="lead-title">Belum yakin? Ambil yang gratis dulu.</h3>
-      <p class="lead-desc">
-        Download panduan <em>"5 Tanda Anak Siap Mulai Belajar Coding"</em> untuk orang tua yang masih mempertimbangkan.
-      </p>
-      <form class="lead-form" id="leadForm">
-        <input type="email" class="lead-input" placeholder="Email Anda" aria-label="Email untuk download panduan gratis"
-          required>
-        <button type="submit" class="btn-lead">Kirim →</button>
-      </form>
-      <div class="lead-success" id="leadSuccess"><i class="fa-solid fa-circle-check"></i> Sip! Panduannya meluncur ke
-        email Anda.</div>
+  <section class="px-[clamp(20px,5vw,56px)] py-[clamp(48px,6vw,80px)] text-center">
+    <div class="max-w-[1280px] mx-auto">
+      <div data-reveal
+        class="max-w-[560px] mx-auto bg-white border-2 border-dark rounded-[26px] p-[clamp(28px,4vw,44px)] shadow-[8px_8px_0_#9B6DFF]">
+        <div class="text-[40px] mb-2"><i class="fa-solid fa-gift"></i></div>
+        <h3 class="font-display font-extrabold text-[clamp(20px,2.4vw,26px)] text-dark mb-2">Belum yakin? Ambil yang
+          gratis dulu.</h3>
+        <p class="text-[15px] text-muted leading-relaxed font-medium mb-6">
+          Download panduan <em class="text-purple not-italic font-bold">"5 Tanda Anak Siap Mulai Belajar Coding"</em>
+          untuk orang tua yang masih mempertimbangkan.
+        </p>
+        <form class="flex gap-2.5 flex-wrap max-w-[420px] mx-auto" id="leadForm">
+          <input type="email"
+            class="flex-[1_1_200px] px-[18px] py-3 border-2 border-[#E4DCEF] rounded-xl text-[15px] font-body font-semibold text-dark outline-none focus:border-purple transition-colors"
+            placeholder="Email Anda" aria-label="Email untuk download panduan gratis" required>
+          <button type="submit"
+            class="font-display font-bold text-base text-white bg-purple border-none px-6 py-3 rounded-xl cursor-pointer shadow-[0_5px_0_#7A47E6] whitespace-nowrap hover:-translate-y-0.5 hover:shadow-[0_7px_0_#7A47E6] active:translate-y-0.5 active:shadow-[0_2px_0_#7A47E6] transition-all">Kirim
+            →</button>
+        </form>
+        <div
+          class="hidden items-center justify-center gap-2.5 bg-[#EAF8F3] border-2 border-green rounded-xl px-[18px] py-3.5 font-display font-bold text-base text-green-dark"
+          id="leadSuccess"><i class="fa-solid fa-circle-check"></i> Sip! Panduannya meluncur ke
+          email Anda.</div>
+      </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-brand">
-        <div class="footer-logo"><i class="fa-solid fa-rocket"></i></div>
-        <div class="footer-name">
-          <strong>CODEPOLITAN Junior</strong> · by PT Codepolitan Integrasi Indonesia
+  <footer class="border-t-2 border-border">
+    <div
+      class="max-w-[1280px] mx-auto flex justify-between items-center flex-wrap gap-3.5 py-[26px] px-[clamp(16px,4vw,40px)]">
+      <div class="flex items-center gap-2.5">
+        <div class="w-[34px] h-[34px] rounded-xl bg-red flex items-center justify-center text-[17px] -rotate-6"><i
+            class="fa-solid fa-rocket"></i></div>
+        <div class="text-[13px] text-muted-lighter font-semibold">
+          <strong class="text-dark">CODEPOLITAN Junior</strong> · by PT Codepolitan Integrasi Indonesia
         </div>
       </div>
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="#" id="untuk-sekolah" class="footer-link">Untuk Sekolah</a>
-        <a href="#" class="footer-link">Lokasi</a>
-        <a href="#" class="footer-link">Kontak</a>
+      <nav class="flex gap-2 flex-wrap" aria-label="Footer navigation">
+        <a href="#" id="untuk-sekolah"
+          class="text-[13px] text-muted font-bold no-underline px-3 py-1.5 rounded-lg hover:bg-[#F3ECFF] hover:text-dark transition-colors">Untuk
+          Sekolah</a>
+        <a href="#"
+          class="text-[13px] text-muted font-bold no-underline px-3 py-1.5 rounded-lg hover:bg-[#F3ECFF] hover:text-dark transition-colors">Lokasi</a>
+        <a href="#"
+          class="text-[13px] text-muted font-bold no-underline px-3 py-1.5 rounded-lg hover:bg-[#F3ECFF] hover:text-dark transition-colors">Kontak</a>
       </nav>
     </div>
   </footer>
@@ -518,11 +739,25 @@
       requestAnimationFrame(step);
     }
 
+    // Hamburger menu toggle
+    const navBtn = document.getElementById('navMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const navIcon = navBtn?.querySelector('i');
+    navBtn?.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navIcon.className = navLinks.classList.contains('open') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    });
+    // Close menu on link click
+    navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navIcon.className = 'fa-solid fa-bars';
+    }));
+
     // Lead magnet form submit
     document.getElementById('leadForm').addEventListener('submit', (e) => {
       e.preventDefault();
       document.getElementById('leadForm').style.display = 'none';
-      document.getElementById('leadSuccess').classList.add('visible');
+      document.getElementById('leadSuccess').classList.remove('hidden');
     });
   </script>
 </body>
