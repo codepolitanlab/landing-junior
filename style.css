@@ -27,6 +27,14 @@
   50%      { opacity: 1;   transform: scale(1.2); }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 100px;
+}
+
 /* ===== SCROLL REVEAL ===== */
 [data-reveal] {
   opacity: 0;
